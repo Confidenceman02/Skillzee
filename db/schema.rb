@@ -10,10 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503020953) do
+ActiveRecord::Schema.define(version: 20170504093610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_date_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["course_date_id"], name: "index_bookings_on_course_date_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "course_categories", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_course_categories_on_category_id", using: :btree
+    t.index ["course_id"], name: "index_course_categories_on_course_id", using: :btree
+  end
+
+  create_table "course_dates", force: :cascade do |t|
+    t.integer  "course_id"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_course_dates_on_course_id", using: :btree
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "price"
+    t.string   "title"
+    t.string   "address"
+    t.string   "country_code"
+    t.string   "city"
+    t.string   "state"
+    t.text     "description"
+    t.integer  "max_students"
+    t.decimal  "lng",          precision: 10, scale: 6
+    t.decimal  "lat",          precision: 10, scale: 6
+    t.text     "notes"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "duration"
+    t.index ["user_id"], name: "index_courses_on_user_id", using: :btree
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "course_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_images_on_course_id", using: :btree
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,6 +83,15 @@ ActiveRecord::Schema.define(version: 20170503020953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "booking_id"
+    t.text     "description"
+    t.integer  "score"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["booking_id"], name: "index_ratings_on_booking_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +111,13 @@ ActiveRecord::Schema.define(version: 20170503020953) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "course_dates"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "course_categories", "categories"
+  add_foreign_key "course_categories", "courses"
+  add_foreign_key "course_dates", "courses"
+  add_foreign_key "courses", "users"
+  add_foreign_key "images", "courses"
   add_foreign_key "profiles", "users"
+  add_foreign_key "ratings", "bookings"
 end
