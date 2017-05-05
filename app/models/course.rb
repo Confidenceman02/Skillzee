@@ -4,4 +4,5 @@ class Course < ApplicationRecord
   has_many :images
   has_many :course_categories
   has_many :categories, :through => :course_categories
+  
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :courses
+  resources :course_dates
   root 'home#index'
   get 'about', to: 'home#about'
   devise_for :users, controllers: {

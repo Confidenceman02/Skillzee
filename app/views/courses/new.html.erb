@@ -1,0 +1,94 @@
+<h1 align="center">Create new course</h1>
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for(@course, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :price %>
+        </div>
+        <div class="col-xs-4">
+          <%= f.text_field :price, class: "form-control", placeholder: "price", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :title %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_field :title, class: "form-control", placeholder: "course title", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label 'Pick categories'%>
+        </div>
+        <div class="col-xs-10">
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :category do |cb| %>
+              <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+            <% end %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :address %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_field :address, class: "form-control", placeholder: "street address", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :country_code, 'Country' %>
+        </div>
+        <div class="col-xs-4">
+          <%= f.collection_select :country_code, @countries, :alpha2, :name %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :city %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_field :city, class: "form-control", placeholder: "city", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :state %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_field :state, class: "form-control", placeholder: "state", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :max_students %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_field :max_students, class: "form-control", placeholder: "max students", autofocus: true %>
+        </div>
+      </div>
+        <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :description %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_area :description, class: "form-control", placeholder: "enter course description", size: "30x10" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :notes %>
+        </div>
+        <div class="col-xs-10">
+          <%= f.text_area :notes, class: "form-control", placeholder: "enter course description", size: "30x10" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+          <%= f.submit class: "btn btn-primary"%>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
