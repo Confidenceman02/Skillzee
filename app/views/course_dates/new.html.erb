@@ -1,28 +1,37 @@
 <div class="container">
   <div class="row col-xs-10">
-      <h1>Add course dates</h1>
+      <h2>Add course dates</h2>
     <div class="col-xs-5">
       <%= form_for [@course, @date] do |f| %>
       <%= f.date_select :date %>
     </div>
-    <div class="col-xs-5">
+    <%#<div class="col-xs-5">%>
       <%= f.time_select :time %>
       <%= f.submit "add", class: "btn btn-default btn-xs" %>
       <% end %>
-    </div>
+    <%#</div>%>
   </div>
 </div>
 <% @dates.each do |date| %>
-  <table class="table">
+  <table class="table table-responsive">
     <tr>
       <th>Title</th>
       <th>Date</th>
       <th>Time</th>
+      <th>Action</th>
     </tr>
     <tr>
       <td><%= @course.title %></td>
       <td><%= date.date %></td>
       <td><%= date.time %></td>
+      <td><%= link_to :delete, course_date_path(date), method: :delete, 
+                                        data: {confirm: "Are you sure you want to delete the article?"}, 
+                                        class: "btn btn-danger btn-xs"  %></td>
     </tr>
   </table>
+  <div class="row col-sm-12">
+    <div class="col-xs-offset-2 col-xs-8">
+      <%= link_to 'Finish', course_path(date.course), class: "btn btn-default btn-block" %>
+    </div>
+  </div>
 <% end %>

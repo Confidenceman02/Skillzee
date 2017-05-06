@@ -16,5 +16,9 @@ class Course < ApplicationRecord
   def full_street_address
     [address, city, country.name].compact.join(',')
   end
+
+  def country_code_upper
+    country_code.upcase
+  end
   
 end

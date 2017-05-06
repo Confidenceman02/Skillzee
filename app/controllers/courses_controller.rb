@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show]
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
  
   def index
     @courses = Course.all
@@ -21,6 +21,14 @@ class CoursesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @countries = ISO3166::Country.codes.map { |country_code| 
+    ISO3166::Country.new(country_code) }
+  end
+
+  def update
   end
 
   def show

@@ -1,5 +1,6 @@
 class CourseDatesController < ApplicationController
-before_action :set_course, except: [:update]
+before_action :set_course, except: [:update, :destroy]
+before_action :set_date, only: [:destroy]
   def new
     @date = CourseDate.new
     @dates = CourseDate.all
@@ -14,6 +15,12 @@ before_action :set_course, except: [:update]
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @date.destroy
+    flash[:success] = "Date was successfully deleted"
+    redirect_to new_course_course_date_path(@date.course)
   end
 
 private
