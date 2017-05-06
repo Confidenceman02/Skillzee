@@ -29,11 +29,17 @@ class CoursesController < ApplicationController
   end
 
   def update
+    @course.update(course_params)
+    redirect_to new_course_course_date_path(@course)
   end
 
   def show
   end
-  
+
+  def destroy
+    @course.destroy
+    redirect_to '/'
+  end
 
   private
 
