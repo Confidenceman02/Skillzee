@@ -13,11 +13,11 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @course = Course.new(course_params)
+    @course = Course.new(course_params) 
     @course.user = current_user
     if @course.save
       flash[:success] = "Course was successfully saved"
-      redirect_to course_path(@course)
+      redirect_to new_course_course_date_path(@course)
     else
       render 'new'
     end
@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:price, :title, :address, :country_code, :city, :state, :description, :max_students, :notes, category_ids: [])
+    params.require(:course).permit(:price, :title, :image, :address, :country_code, :city, :duration, :about_teacher, :state, :description, :max_students, :notes, category_ids: [])
     end
 
 end

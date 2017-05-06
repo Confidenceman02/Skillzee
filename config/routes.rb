@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :courses
-  resources :course_dates
+  resources :courses do
+    resources :course_dates, only: [:index, :new, :create]
+  end
+  resources :course_dates, only: [:show, :edit, :update, :destroy]
+  
   root 'home#index'
   get 'about', to: 'home#about'
   devise_for :users, controllers: {
