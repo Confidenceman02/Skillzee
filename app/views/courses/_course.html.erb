@@ -3,6 +3,7 @@
 <% else %>
 <% end %>
 <div class="container">
+  <h3><%= obj.title %></h3>
   <div class="row col-xs-12">
     <div class="col-xs-4">
       <h4>$<%= obj.price %></h4>
@@ -10,6 +11,7 @@
     <div class="col-xs-4">
       <h4><%= obj.duration %>hrs</h4>
     </div>
+    <%# delete options for user of course%>
     <% if obj.user == current_user %>
     </div class="row col-xs-6">
       <div class="col-xs-6">
@@ -20,22 +22,29 @@
     </div>
     <% else %>
     <div class="col-xs-4">
-      <%= link_to "book", "#", class: "btn btn-default btn-sm" %>
+      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm" %>
     </div>
       <% end %>
   </div>
 </div>
 <div class="container">
-  <h3><%= obj.title %></h3>
-  <h4>Description</h4>
-  <p><%= obj.description %></p>
-  <h4>About teacher</h4>
-  <p><%= obj.about_teacher %></p>
-  <h4>Notes</h4>
-  <p><%= obj.notes %></p>
-  <div class="map_embed">
-    <%= render 'map_embed', lat: obj.lat, lng: obj.lng %>
+  <div class="row">
+    <div class="col-sm-12 course_text_box">
+      <h4>Description</h4>
+      <p><%= obj.description %></p>
+    </div>
+    <div class="col-sm-12 course_text_box">
+      <h4>About teacher</h4>
+      <p><%= obj.about_teacher %></p>
+    </div>
+    <div class="col-sm-12 course_text_box">
+      <h4>Notes</h4>
+      <p><%= obj.notes %></p>
+    </div>
+      <div class="map_embed">
+        <%= render 'map_embed', lat: obj.lat, lng: obj.lng %>
+      </div>
+      <h4><%= obj.address %></h4>
+      <h5><%= obj.city %></h5>
   </div>
-  <h4><%= obj.address %></h4>
-  <h5><%= obj.city %></h5>
 </div>
