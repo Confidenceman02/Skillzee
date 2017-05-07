@@ -1,9 +1,6 @@
-
 <div class="container">
   <div class="available_dates">    
     <h4>Available Dates</h4>
   </div>
-<%= form_for @booking do |f| %>
   <%= render 'course_dates/dates', dates: @course.course_dates %>
-<% end %>
 </div>
