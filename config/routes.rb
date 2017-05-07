@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  get 'bookings/new'
 
-  get 'booking/new'
-
+  resources :bookings
   resources :courses do
     resources :course_dates, only: [:index, :new, :create]
   end
-  resources :bookings
   resources :course_dates, only: [:show, :edit, :update, :destroy]
   
   root 'home#index'

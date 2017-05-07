@@ -22,7 +22,7 @@
     </div>
     <% else %>
     <div class="col-xs-4">
-      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm" %>
+      <%= link_to "book", bookings_path(course: obj), class: "btn btn-default btn-sm" %>
     </div>
       <% end %>
   </div>
