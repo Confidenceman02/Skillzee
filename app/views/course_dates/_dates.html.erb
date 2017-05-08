@@ -1,13 +1,15 @@
+<div class="container">
+ 
 <% dates.each do |date| %>
   <table class="table table-responsive">
     <tr>
-      <th>Title</th>
+    
       <th>Date</th>
       <th>Time</th>
       <th>Action</th>
     </tr>
     <tr>
-      <td><%= date.course.title %></td>
+     
       <td><%= date.date %></td>
       <td><%= date.time %></td>
       <% if date.course.user == current_user %>
@@ -26,3 +28,4 @@
   </div>
 <% end %>
       <%= link_to 'Finish', course_path(@course), class: "btn btn-default btn-block" %>
+</div>
