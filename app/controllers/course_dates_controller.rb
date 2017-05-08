@@ -3,7 +3,7 @@ before_action :set_course, except: [:update, :destroy]
 before_action :set_date, only: [:destroy]
   def new
     @date = CourseDate.new
-    @dates = CourseDate.all
+    @dates = @course.course_dates
   end
 
   def create 

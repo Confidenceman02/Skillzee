@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @dates = @course.course_dates
     @bookings = Booking.where(:user_id == current_user.id)
+    @bookings.where(:course_date_id == @course.course_dates)
   end
 
   def create
