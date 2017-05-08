@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_course, only: [:index, :new]
+  before_action :set_course, only: [:new]
   def index
 
   end
@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @dates = @course.course_dates
+    @bookings = Booking.where(:user_id == current_user.id)
   end
 
   def create
