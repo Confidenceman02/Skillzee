@@ -9,7 +9,7 @@
       <h4>$<%= obj.price %></h4>
     </div>
     <div class="col-xs-4">
-      <h4><%= obj.duration %>hrs</h4>
+     <div class="clock_container"><%= time_icon %> <span class"duration"><%= obj.duration %>hrs</span></div>
     </div>
     <%# delete options for user of course%>
     <% if obj.user == current_user %>
@@ -22,7 +22,7 @@
     </div>
     <% else %>
     <div class="col-xs-4">
-      <%= link_to "book", bookings_path(course: obj), class: "btn btn-default btn-sm" %>
+      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm" %>
     </div>
       <% end %>
   </div>
