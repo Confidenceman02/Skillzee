@@ -6,9 +6,9 @@
     <h3><%= @course.title %></h3>
   </div>
 </div>
-  <div class="container">
-    <div class="available_dates row col-sm-12">    
-      <span class="col-xs-8 available_title"><h4>Available Dates</h4></span>
-    </div>
+<div class="container">
+  <div class="available_dates row col-sm-12">    
+    <span class="col-xs-8 available_title"><h4>Available Dates</h4></span>
   </div>
-  <%= render 'course_dates/dates', dates: @course.course_dates %>
+</div>
+<%= render 'course_dates/dates', dates: @course.course_dates, paid_dates: @paid_booking %>

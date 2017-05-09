@@ -4,6 +4,8 @@
 @import "font-awesome";
 @import "courses";
 @import "bookings";
+// @import "course_dates"
+
 .home_titles {
   h1 {
   font-size: 5em;
@@ -75,4 +77,17 @@ li {
     span {
       vertical-align: super;
     }
+}
+
+.attending_dates {
+  padding: 0px;
+  border-left: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.booking_table {
+  margin: 0px;
 }
