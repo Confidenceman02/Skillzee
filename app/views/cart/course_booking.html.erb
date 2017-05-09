@@ -1,20 +1,30 @@
-<h1>Hi booking!!</h1>
-<% @bookings.each do |booking| %>
+
+<div class="container">
+  <h1>Cart</h1>
+  <div class="available_dates row col-sm-12">    
+    <span class="col-xs-8 available_title"><h4>Skillz booked</h4></span>
+  </div>
+  <% @bookings.each do |booking| %>
   <table class="table table-responsive">
     <tr>
+      <th>Course</th>
       <th>Date</th>
       <th>Time</th>
       <th>price</th>
       <th>Action</th>
     </tr>
     <tr>
+      <td><%= booking.course_date.course.title %></td>
       <td><%= booking.course_date.date %></td>
       <td><%= booking.course_date.time %></td>
       <td><%= booking.course_date.course.price %></td>
-      <td><%= link_to :delete, booking_path(id: booking), method: :delete, 
+      <td><%= link_to :Remove, booking_path(id: booking), method: :delete, 
                                         data: {confirm: "Are you sure you want to delete the article?"}, 
                                         class: "btn btn-danger btn-xs"  %></td>
       <% end %>
     </tr>
   </table>
+  <h2>Total: <%= @total %> </h2>
+  <%= link_to :payment, "#", class: "btn btn-default"%>
+</div>
 

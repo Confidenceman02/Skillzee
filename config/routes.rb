@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :charges
   get 'cart', to: 'cart#course_booking'
   resources :bookings
   resources :courses do
