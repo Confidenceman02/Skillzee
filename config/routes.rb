@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get 'cart', to: 'cart#course_booking'
   resources :bookings
   resources :courses do
     resources :course_dates, only: [:index, :new, :create]
