@@ -1,0 +1,36 @@
+<div class="container">
+<h1><%= current_user.profile.first_name %></h1>
+  <% @bookings.each do |booking| %>
+    <table class="table table-responsive">
+      <tr>
+        <th>Course</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>price</th>
+      
+      </tr>
+      <tr>
+        <td><%= booking.course_date.course.title %></td>
+        <td><%= booking.course_date.date %></td>
+        <td><%= booking.course_date.time %></td>
+        <td><%= booking.course_date.course.price %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><h3>TOTAL</h3></td>
+        <td><h3>$<%= @total %></h3></td>
+
+      </tr>
+        
+        <% end %>
+    </table>
+
+    <p>You will receive email after payment confirming your booking.</p>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount= <%= @total * 100 %>
+            data-locale="auto"></script>
+</div>

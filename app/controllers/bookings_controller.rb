@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(user_id: params[:user_id], course_date_id: params[:course_date])
     @course = @booking.course_date.course
+    
     if @booking.save
       flash[:success] = "Date was successfully added"
       redirect_to new_booking_path(course: @course)
