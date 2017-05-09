@@ -1,5 +1,5 @@
 <div class="container">
- 
+
 <% dates.each do |date| %>
   <table class="table table-responsive booking_table">
     <tr>
@@ -9,7 +9,7 @@
       <th>Action</th>
     </tr>
     <tr>
-     
+
       <td><%= date.date %></td>
       <td><%= date.time %></td>
       <% if date.course.user == current_user %>

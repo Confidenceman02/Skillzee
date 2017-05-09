@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     @bookings.where(:course_date_id == @course.course_dates)
     @paid_booking = current_user.bookings.paid_booking
+    @unpaid_bookings = current_user.bookings.no_payments
   end
 
   def create

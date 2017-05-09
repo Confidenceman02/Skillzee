@@ -1,7 +1,9 @@
  
   
 <div class="container">
-  <%= render 'bookings/cart', bookings: @bookings %>
+  <% if @unpaid_bookings.count > 0 %>
+  <%= render 'bookings/cart', bookings: @unpaid_bookings %>
+  <% end %>
   <div class="row col-sm-12">
     <h3><%= @course.title %></h3>
   </div>
