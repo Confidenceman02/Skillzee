@@ -7,7 +7,7 @@
   <% else %>
   <% end %>
   <h1 align="center"><%= @profile.first_name %></h1>
-
+<div class="container">
   <% @paid_bookings.each do |booking| %>
   <table class="table table-responsive booking_table">
     <tr>
@@ -22,4 +22,4 @@
     </tr>
   </table>
   <% end %>
-<b>
+</div>
