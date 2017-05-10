@@ -26,9 +26,12 @@
         <%= f.select :gender, %w{Male Female}, prompt: 'select', required: true, placeholder: 'gender' %>
       </div>
 
-      <div class="field">
-        <%= f.label :avatar %>
-        <%= f.text_area :avatar %>
+       <div class="form-group">
+        <div class="col-xs-12">
+          <%= f.label :image %>
+          <%= f.hidden_field :image, value: f.object.cached_image_data %>
+          <%= f.file_field :image %>
+        </div>
       </div>
 
       <div class="actions">
