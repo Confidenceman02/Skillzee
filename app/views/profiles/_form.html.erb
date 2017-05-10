@@ -3,7 +3,6 @@
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
       <ul>
       <% profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -26,15 +25,13 @@
         <%= f.select :gender, %w{Male Female}, prompt: 'select', required: true, placeholder: 'gender' %>
       </div>
 
+        <div class="row col-xs-12">
        <div class="form-group">
-        <div class="col-xs-12">
           <%= f.label :image %>
           <%= f.hidden_field :image, value: f.object.cached_image_data %>
-          <%= f.file_field :image %>
+          <%= file_field_tag :image %>
         </div>
       </div>
-
-      <div class="actions">
-        <%= f.submit %>
-      </div>
+      <%= f.submit, user_id: current_user.id %>
     <% end %>
+  </div>
