@@ -1,0 +1,15 @@
+<% if flash[:notice].present? %>
+  <div class="alert-container">
+    <div class="alert alert-info">
+      <%= flash[:notice] %>
+    </div>
+  </div>
+<% end %>
+<% if flash[:alert].present? %>
+  <div class="alert-container">
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  </div>
+<% end %>
+<script>setTimeout("$('.alert').fadeOut('slow')", 2500)</script>

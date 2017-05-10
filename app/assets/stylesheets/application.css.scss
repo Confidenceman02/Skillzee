@@ -94,3 +94,15 @@ li {
 .booking_table {
   margin: 0px;
 }
+
+.alert-container {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 5%;
+  left: 0;
+}
+.alert {
+  text-align: center;
+}

@@ -10,6 +10,7 @@
   </head>
 
   <body class="<%= current_page?('/') ? 'index' : '' %>">
+  <%= render 'layouts/messages' %>
   <%= render 'layouts/navigation' unless @navbar_dsbl %>
   <%= yield %>
   </body>

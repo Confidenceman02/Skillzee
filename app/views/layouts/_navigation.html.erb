@@ -25,7 +25,9 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><li><%= link_to 'Your Profile', profile_path(current_user) %></li></li>
+            <% if user_signed_in? %>
+            <li><%= link_to 'Your Profile', profile_path(current_user) %></li>
+            <% end %>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
