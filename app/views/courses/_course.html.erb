@@ -20,9 +20,14 @@
                                         class: "btn btn-danger btn-xs""btn btn-default btn-sm" %>
       </div>
     </div>
-    <% else %>
+    <% elsif
+        user_signed_in? && current_user.profile.present? %>
     <div class="col-xs-4">
       <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm" %>
+    </div>
+    <% else %>
+     <div class="col-xs-4">
+      <%= link_to "book", new_profile_path(course: obj), class: "btn btn-default btn-sm" %>
     </div>
       <% end %>
   </div>
