@@ -16,8 +16,10 @@
 </p>
 
 <p>
-  <strong>Avatar:</strong>
-  <%= @profile.avatar %>
+  <% if @profile.image_data %>
+<%= image_tag @profile.image_url, class: "img-responsive" %>
+<% else %>
+<% end %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |

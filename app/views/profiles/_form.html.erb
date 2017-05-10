@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :user_id %>
   <div class="container">
     <div class="row col-sm-12">
       <div class="form-group">
@@ -24,14 +25,13 @@
         <%= f.label :gender %>
         <%= f.select :gender, %w{Male Female}, prompt: 'select', required: true, placeholder: 'gender' %>
       </div>
-
-        <div class="row col-xs-12">
-       <div class="form-group">
+      <div class="form-group">
+        <div class="col-xs-12">
           <%= f.label :image %>
           <%= f.hidden_field :image, value: f.object.cached_image_data %>
-          <%= file_field_tag :image %>
+          <%= f.file_field :image %>
         </div>
       </div>
-      <%= f.submit, user_id: current_user.id %>
+      <%= f.submit %>
     <% end %>
   </div>
