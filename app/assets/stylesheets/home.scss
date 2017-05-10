@@ -1,3 +1,32 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home_titles {
+  margin-bottom: 20%;
+}
+
+body.index {
+  background-color: #01C8D9;
+}
+
+.brand_title {
+  font-family: 'Sarala', sans-serif;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.sub_title {
+  font-family: 'Arial', sans-serif;
+}
+
+.home_main {
+  .btn_1 {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+    .btn_2 {
+      border: 1px solid black;
+      color: black;
+    }
+}
