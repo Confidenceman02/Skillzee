@@ -25,8 +25,11 @@
     </tr>
   </table>
   <h2>Total: <%= @total %> </h2>
-
-  <%= link_to :Confirm, new_charge_path, class: "btn btn-default" %>
-
+  <% if current_user.profile.present? %>
+    <%= link_to :Confirm, new_charge_path, class: "btn btn-default" %>
+  <% else%>
+  <%= link_to :Confirm, new_profile_path, class: "btn btn-default" %>
+  <% end %>
+  
   <li align="center"><%= link_to '[ continue searching skillz ]', courses_path %></li>
 </div>
