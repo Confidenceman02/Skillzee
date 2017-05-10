@@ -1,26 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+<% if @profile.image_data %>
 
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
+  <div class="profile_img_container">
+    <%= image_tag @profile.image_url, class: "profile_img" %>
+  </div>
+  <% else %>
+  <% end %>
+  <h1 align="center"><%= @profile.first_name %></h1>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @profile.gender %>
-</p>
-
-<p>
-  <% if @profile.image_data %>
-<%= image_tag @profile.image_url, class: "img-responsive" %>
-<% else %>
-<% end %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+  <% @paid_bookings.each do |booking| %>
+  <table class="table table-responsive booking_table">
+    <tr>
+      <th>Course</th>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+    <tr>
+      <td><%= booking.course_date.course.title %></td>
+      <td><%= booking.course_date.date %></td>
+      <td><%= booking.course_date.time.strftime("%H:%I") %></td>
+    </tr>
+  </table>
+  <% end %>
+<b>
