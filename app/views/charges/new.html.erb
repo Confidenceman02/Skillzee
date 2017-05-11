@@ -12,7 +12,7 @@
       <tr>
         <td><%= booking.course_date.course.title %></td>
         <td><%= booking.course_date.date %></td>
-        <td><%= booking.course_date.time %></td>
+        <td><%= booking.course_date.time.strftime('%W:%I') %></td>
         <td><%= booking.course_date.course.price %></td>
       </tr>
       <tr>

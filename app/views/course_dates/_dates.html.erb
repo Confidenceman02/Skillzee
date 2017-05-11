@@ -11,7 +11,7 @@
     <tr>
 
       <td><%= date.date %></td>
-      <td><%= date.time %></td>
+      <td><%= date.time.strftime('%H:%I') %></td>
       <% if date.course.user == current_user %>
         <td><%= link_to :delete, course_date_path(date), method: :delete, 
                                           data: {confirm: "Are you sure you want to delete the article?"}, 
