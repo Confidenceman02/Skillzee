@@ -10,4 +10,8 @@ class Booking < ApplicationRecord
     course.price
     #course_date.course.price
   end
+
+  def toggle_payment
+    self.toggle!(:payment)
+  end
 end

@@ -21,6 +21,7 @@ class ChargesController < ApplicationController
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
+  current_user.bookings.find_by(payment: false).toggle_payment
 
   rescue Stripe::CardError => e
   flash[:error] = e.message

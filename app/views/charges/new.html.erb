@@ -1,5 +1,6 @@
 <div class="container">
 <h1><%= current_user.profile.first_name %></h1>
+<%= form_tag charges_path, method: 'post', id: 'payment-form' do %>
   <% @bookings.each do |booking| %>
     <table class="table table-responsive">
       <tr>
@@ -15,16 +16,16 @@
         <td><%= booking.course_date.time.strftime('%W:%I') %></td>
         <td><%= booking.course_date.course.price %></td>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td><h3>TOTAL</h3></td>
-        <td><h3>$<%= @total %></h3></td>
-
-      </tr>
-        
-        <% end %>
     </table>
+  <% end %>
+  <div class="row col-xs-offset-5 col-xs-12">
+    <div class="col-xs-4">
+      <h3>TOTAL</h3></td>
+    </div>
+      <div class="col-xs-8">
+      <h3>$<%= @total %></h3>
+    </div>
+  </div>
 
     <p>You will receive email after payment confirming your booking.</p>
 
@@ -35,3 +36,4 @@
             data-locale="auto"></script>
             <li align="center"><%= link_to '[ cancel transation ]', cart_path %></li>
 </div>
+<% end %>
