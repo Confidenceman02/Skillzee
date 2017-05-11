@@ -1,5 +1,7 @@
 <% @courses.each do |c| %>
 <%= render 'course', obj: c %>
+<div class="map_embed">
+<%= render 'map_embed', lat: c.lat, lng: c.lng %>
 <% end %>
-
+</div>
 

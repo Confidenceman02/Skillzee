@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'search/category', to: 'search#courses'
   resources :charges
   get 'cart', to: 'cart#course_booking'
   resources :bookings
@@ -14,6 +15,5 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
       }
   resources :profiles
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

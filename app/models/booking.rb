@@ -10,5 +10,4 @@ class Booking < ApplicationRecord
     course.price
     #course_date.course.price
   end
-
 end

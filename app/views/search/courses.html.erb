@@ -1,0 +1,4 @@
+<% @courses.each do |course| %>
+<%= render 'courses/course', obj: course %>
+<%= render 'courses/map_embed', lat: course.lat, lng: course.lng %>
+<% end %>
