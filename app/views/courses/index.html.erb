@@ -2,6 +2,7 @@
 <%= render 'course', obj: c %>
 <div class="map_embed">
 <%= render 'map_embed', lat: c.lat, lng: c.lng %>
-<% end %>
+      <h4><%= c.address %></h4>
+      <h5><%= c.city %></h5>
 </div>
-
+<% end %>
