@@ -74,14 +74,6 @@ li {
   padding-left: 8px;
 }
 
-.clock_container {
-  i {
-    margin-top: 0px;
-}
-    span {
-      vertical-align: super;
-    }
-}
 
 .attending_dates {
   padding: 0px;
@@ -106,4 +98,13 @@ li {
 }
 .alert {
   text-align: center;
+}
+
+.address_box {
+    margin-bottom: 35px;
+}
+
+.line {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
 }

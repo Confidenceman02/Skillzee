@@ -33,15 +33,20 @@ body.index {
 
 .about_container {
   position: relative;
-  top: -19px;
+  top: 73px;
   background-color: #01C8D9;
+  margin: 0px;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.info_icon {
-  margin-top: 30px;
+.icon {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .info_copy {
   font-family: 'Arial';
 }
+

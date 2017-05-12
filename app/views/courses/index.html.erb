@@ -1,12 +1,12 @@
 <% @courses.each do |c| %>
-<%= render 'course', obj: c %>
-<div class="map_embed">
-<%= render 'map_embed', lat: c.lat, lng: c.lng %>
-</div>
-<div class="container address_box">
-  <div class="line">
-    <h4><%= c.address %></h4>
-    <h5><%= c.city %></h5>
-  </div>
-</div>
+  <%= render 'course', obj: c %>
+    <div class="map_embed">
+      <%= render 'map_embed', lat: c.lat, lng: c.lng %>
+    </div>
+    <div class="container address_box">
+      <div class="line">
+        <h4><%= c.address %></h4>
+        <h5><%= c.city %></h5>
+      </div>
+    </div>
 <% end %>
