@@ -24,11 +24,11 @@
     <% elsif
         user_signed_in? && current_user.profile.present? %>
     <div class="col-xs-4">
-      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm" %>
+      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm book_btn" %>
     </div>
     <% else %>
      <div class="col-xs-4">
-      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm" %>
+      <%= link_to "book", new_booking_path(course: obj), class: "btn btn-default btn-sm book_btn" %>
     </div>
       <% end %>
   </div>
