@@ -13,3 +13,31 @@
   border-radius: 50%;
   width: 40%;
 }
+
+#toggle {
+  display: none;
+}
+
+.courses_btn {
+  margin-top: 50px;
+  height: 5rem;
+}
+
+.courses_btn {
+  h3 {
+    margin: 0px;
+  }
+}
+
+#expand {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.3s;
+/*   transition: height 0.5s; */
+  /*   color: #FFF; */
+}
+
+#toggle:checked ~ #expand {
+  height: 300px;
+   overflow: scroll;
+}
