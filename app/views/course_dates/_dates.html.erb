@@ -12,8 +12,10 @@
 
       <td><%= date.date %></td>
       <td><%= date.time.strftime('%H:%I') %></td>
-      
-      <% if current_user.bookings.paid_bookings.exists?(course_date_id: date.id) %>
+      <% if date.course.user == current_user %>
+        <td><%= link_to :delete, course_date_path(date), method: :delete, data: { confirm: "Are you sure you want to delete this date?" }, class: "btn btn-danger btn-xs" %></td>
+
+      <% elsif current_user.bookings.paid_bookings.exists?(course_date_id: date.id) %>
         <td><span class="btn btn-success btn-xs">PAID</span>
       <% else %>
         <td><%= link_to :add, bookings_path(course_date: date, user_id: current_user), method: :post, class: "btn btn-default btn-xs" %></td>

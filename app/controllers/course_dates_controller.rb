@@ -4,7 +4,7 @@ before_action :set_date, only: [:destroy]
   def new
     @date = CourseDate.new
     @dates = @course.course_dates
-    @paid_booking = current_user.bookings.paid_booking
+    @paid_bookings = current_user.bookings.paid_bookings
   end
 
   def create 
