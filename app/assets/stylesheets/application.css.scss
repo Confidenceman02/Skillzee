@@ -8,6 +8,7 @@
 @import "home";
 @import "profiles";
 @import "layouts";
+@import "devise";
 // @import "course_dates"
 
 .home_titles {
@@ -107,4 +108,8 @@ li {
 .line {
     border-bottom: 1px solid #eaeaea;
     padding-bottom: 5px;
+}
+
+.sign_in, .sign_up {
+  margin-top: 30%;
 }
