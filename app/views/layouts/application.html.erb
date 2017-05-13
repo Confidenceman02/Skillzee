@@ -8,10 +8,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Sarala" rel="stylesheet">
   </head>
-
   <body class="<%= current_page?('/') ? 'index' : '' %>">
-  <%= render 'layouts/messages' %>
-  <%= render 'layouts/navigation' unless @navbar_dsbl %>
-  <%= yield %>
+    <div class="error">
+      <%= render 'layouts/messages' %>
+    </div>
+    <%= render 'layouts/navigation' unless @navbar_dsbl %>
+    <%= yield %>
   </body>
 </html>
