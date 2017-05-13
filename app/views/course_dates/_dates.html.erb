@@ -12,20 +12,17 @@
 
       <td><%= date.date %></td>
       <td><%= date.time.strftime('%H:%I') %></td>
-      <% if date.course.user == current_user %>
-        <td><%= link_to :delete, course_date_path(date), method: :delete, 
-                                          data: {confirm: "Are you sure you want to delete the article?"}, 
-                                          class: "btn btn-danger btn-xs"  %></td>
-      <% else %>
       
-        <td><%= link_to :add, bookings_path(course_date: date, user_id: current_user), method: :post, class: "btn btn-default btn-xs" %>
+      <% if current_user.bookings.paid_bookings.exists?(course_date_id: date.id) %>
+        <td><span class="btn btn-success btn-xs">PAID</span>
+      <% else %>
+        <td><%= link_to :add, bookings_path(course_date: date, user_id: current_user), method: :post, class: "btn btn-default btn-xs" %></td>
       <% end %>
     </tr>
   </table>
-  
   <% if paid_dates.exists?(course_date_id: date.id) %>
     <div class="container">
-      <div class="attending_dates row col-sm-12">    
+      <div class="attending_dates row col-sm-12">
         <h4 align="center">Attending</h4>
       </div>
     </div>

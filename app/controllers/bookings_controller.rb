@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @dates = @course.course_dates
     @bookings = current_user.bookings
     @bookings.where(:course_date_id == @course.course_dates)
-    @paid_booking = current_user.bookings.paid_booking
+    @paid_booking = current_user.bookings.paid_bookings
     @unpaid_bookings = current_user.bookings.no_payments
   end
 
