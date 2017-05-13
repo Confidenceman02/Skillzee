@@ -9,7 +9,7 @@
   <h1 align="center"><%= @profile.first_name %></h1>
   <%#expand section%>
     <input id="toggle" type="checkbox">
-    <label class="btn btn-default btn-lg btn-block courses_btn" for="toggle"><h3>Your courses</h3></label>
+    <label class="btn btn-lg btn-block courses_btn" for="toggle"><h3>Your courses</h3></label>
   <div id="expand">
   <% @paid_bookings.each do |booking| %>
     <table class="table table-responsive booking_table">

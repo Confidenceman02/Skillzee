@@ -21,18 +21,24 @@
 .courses_btn {
   margin-top: 50px;
   height: 5rem;
+  background-color: #01C8D9;
+}
+
+.courses_btn:visited {
+  color:#01C8D9;
 }
 
 .courses_btn {
   h3 {
     margin: 0px;
+    color: white;
   }
 }
 
 #expand {
   height: 0px;
   overflow: hidden;
-  transition: height 0.3s;
+  transition: height 0.3s ease-in-out;
 /*   transition: height 0.5s; */
   /*   color: #FFF; */
 }
