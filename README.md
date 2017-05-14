@@ -19,10 +19,13 @@ The focus of Skillzee is on interactive, organised, fun workshop style teaching 
 
 # Workflow diagram
 ![workflow diagram](/images/workflow.png)
+Format: ![Alt Text](url)
 
 # Wireframe
 ![wireframe](/images/wireframe.png)
+Format: ![Alt Text](url)
 
 # Schema Diagram
 
 ![DB Schema](/images/schema.png)
+Format: ![Alt Text](url)
