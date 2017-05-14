@@ -1,37 +1,32 @@
-
-<%= form_for(profile) do |f| %>
-  <% if profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-      <ul>
-      <% profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <div class="container">
-    <div class="row col-sm-12">
-      <div class="form-group">
-        <div class="field">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, class: "form-control", autofocus: true %>
-        </div>
+  <%= form_for(profile) do |f| %>
+    <% if profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+        <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
       </div>
-    </div>
-
-      <div class="field">
+    <% end %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+          
+    <div class="container form_wrap">
+      <div class="row col-xs-12">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", autofocus: true %>
+      </div>
+      <div class="row col-xs-12 gender_form">
         <%= f.label :gender %>
         <%= f.select :gender, %w{Male Female}, prompt: 'select', required: true, placeholder: 'gender' %>
       </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <%= f.label :image %>
-          <%= f.hidden_field :image, value: f.object.cached_image_data %>
-          <%= f.file_field :image %>
-        </div>
+      <div class="col-xs-12 checkbox_form">
+        <%= f.label :image %>
+        <%= f.hidden_field :image, value: f.object.cached_image_data %>
+        <%= f.file_field :image %>
       </div>
-      <%= f.submit %>
+      <div class="col-xs-12 submit_wrap">
+        <%= f.submit :Submit, class: "btn btn-default submit_btn" %>
+      </div>
+    </div>
     <% end %>
-  </div>
