@@ -14,6 +14,7 @@ gem "shrine"
 gem 'geocoder'
 gem "font-awesome-rails"
 gem 'stripe'
+gem "aws-sdk", "~> 2.1"
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
