@@ -19,7 +19,7 @@ The focus of Skillzee is on interactive, organised, fun workshop style teaching 
 
 # Workflow diagram
 
-![alt text](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/worflow.png)
+![alt text](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/workflow.png)
 
 # Wireframe
 
