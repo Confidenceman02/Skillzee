@@ -18,14 +18,14 @@ Skillzee will provide the eager student the ability to search through different 
 The focus of Skillzee is on interactive, organised, fun workshop style teaching where emphasis is placed on doing, rather than just sitting and listening.
 
 # Workflow diagram
-![workflow diagram](/images/workflow.png)
-Format: ![Alt Text](url)
+![workflow diagram](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/worflow.png)
+![alt text]
 
 # Wireframe
 ![wireframe](/images/wireframe.png)
-Format: ![Alt Text](url)
+![alt text](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/wireframe.png)
 
 # Schema Diagram
 
 ![DB Schema](/images/schema.png)
-Format: ![Alt Text](url)
+![alt text](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/schema.png)
