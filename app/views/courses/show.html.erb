@@ -1,1 +1,5 @@
 <%= render 'course', obj: @course %>
+
+<div class="map_embed">
+  <%= render 'map_embed', lat: @course.lat, lng: @course.lng %>
+</div>
