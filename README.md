@@ -25,11 +25,11 @@ The focus of Skillzee is on interactive, organised, fun workshop style teaching 
 
 # Wireframe
 
-![alt text](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/wireframe.png)
+![wireframe](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/wireframe.png)
 
 # Schema Diagram
 
-![alt text](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/schema.png)
+![schema](https://github.com/Confidenceman02/Skillzee/blob/master/app/assets/images/schema.png)
 
 
 # The process
