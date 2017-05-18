@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   
   root 'home#index'
   get 'about', to: 'home#about'
-  resources :users, only: [:index]
-  devise_for :users, controllers: {
+  get 'users', to: 'users#index'
+  match 'users/:id', to: 'users#destroy', as: :destroy_user, via: :delete
+  devise_for :users, path_prefix: 'd', controllers: {
         sessions: 'users/sessions'
       }
   resources :profiles
