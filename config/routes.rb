@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   get 'about', to: 'home#about'
+  resources :users, only: [:index]
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
