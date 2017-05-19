@@ -36,8 +36,10 @@
           <% end %>
         </ul>
         <%= form_tag(search_category_path, method: :get, class: 'form-group') do %>
-          <%= text_field_tag :search, params[:search], placeholder: 'search' %>
-          <%= submit_tag "search category" %>
+          <%= text_field_tag :search, params[:search], class: 'search_field' %>
+          <%= button_tag(type: :submit) do %>
+          <%= search_icon %>
+          <% end %>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
