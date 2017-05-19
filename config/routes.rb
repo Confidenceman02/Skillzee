@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+  get 'admin/dashboard', to: 'admin_dashboard#home'
   get 'search/category', to: 'search#courses'
   resources :charges
   get 'cart', to: 'cart#course_booking'
