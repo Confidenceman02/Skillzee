@@ -36,7 +36,7 @@
           <% end %>
         </ul>
         <%= form_tag(search_category_path, method: :get, class: 'form-group') do %>
-          <%= text_field_tag :search, params[:search] %>
+          <%= text_field_tag :search, params[:search], placeholder: 'search' %>
           <%= submit_tag "search category" %>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
