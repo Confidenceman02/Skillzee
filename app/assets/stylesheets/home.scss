@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main_wrap {
+  margin-top: 20%;
+}
+
 .about_title {
   margin-bottom: 20px;
 }
@@ -36,8 +40,6 @@ body.index {
 }
 
 .about_container {
-  position: relative;
-  top: 73px;
   background-color: #01C8D9;
   margin: 0px;
   border-radius: 8px;
@@ -54,3 +56,7 @@ body.index {
   font-family: 'Arial';
 }
 
+.divide_line {
+  border: 1px solid #eaeaea;
+  margin-bottom: 20px;
+}
