@@ -10,6 +10,7 @@
   </head>
   <body class="<%= current_page?('/') ? 'index' : '' %>">
     <%= render 'layouts/messages' %>
+    <%# No navbar for landing page%>
     <%= render 'layouts/navigation' unless @navbar_dsbl %>
     <%= yield %>
   </body>
