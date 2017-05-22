@@ -5,4 +5,9 @@ class HomeController < ApplicationController
 
   def about
   end
+
+  def courses_all
+    # show courses respective to category
+    
+  end
 end
