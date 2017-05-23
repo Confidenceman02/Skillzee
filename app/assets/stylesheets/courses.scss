@@ -16,15 +16,15 @@
 }
 
 .book_btn {
-    background-color: #01C8D9;
-    border: 0px;
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 9rem;
+	background-color: #01C8D9;
+	border: 0px;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 9rem;
 }
 
 .book_btn:hover {
-    background-color: #00b4c3;
+  	background-color: #00b4c3;
 }
 
 .clock_container {
@@ -37,9 +37,24 @@
 }
 
 .clock_container {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 #course_country_code {
-    width: 100%;
+  width: 100%;
+}
+
+.map {
+	overflow: hidden;
+	position: relative;
+}
+
+.overlay {
+	background:transparent; 
+	position:relative; 
+	width:500px;
+	height:500px; /* your iframe height */
+	top:480px;  /* your iframe height */
+	margin-top:-480px;  /* your iframe height */
+	z-index: 1000;
 }
