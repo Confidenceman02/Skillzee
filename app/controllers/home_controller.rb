@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
   def courses_all
     # show courses respective to category
+    @food = Category.category_picker('food')
     
   end
 end
