@@ -10,28 +10,15 @@
   
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <% @category.category_picker('Food').courses.each do |course| %>
-      <div class="item active">
-      <%= image_tag course.image_url, class: "image-responsive" %>
+    <% @category.category_picker('Food').courses.each_with_index do |course, index| %>
+      <div class="item <%= index == 0 ? 'active' : '' %>">
+        <%= image_tag course.image_url %>
         <div class="carousel-caption">
           <h3>Caption Text</h3>
         </div>
       </div>
-      <% end %>
-      <div class="item">
-        <img src="http://placehold.it/1200x315" alt="...">
-        <div class="carousel-caption">
-          <h3>Caption Text</h3>
-        </div>
-      </div>
-      <div class="item">
-        <img src="http://placehold.it/1200x315" alt="...">
-        <div class="carousel-caption">
-          <h3>Caption Text</h3>
-        </div>
-      </div>
+    <% end %>
     </div>
-  
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
