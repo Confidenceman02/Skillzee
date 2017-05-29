@@ -3,12 +3,13 @@ class ChargesController < ApplicationController
   def new
     @bookings = current_user.bookings.no_payments
     @total = @bookings.joins(course_date: [:course]).sum(:price)
-    
+    # Stripe requires total to be in cents
   end
 
   def create
     @bookings = current_user.bookings.no_payments
     @total = @bookings.joins(course_date: [:course]).sum(:price)
+    @total *= 100
 
     customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
@@ -23,7 +24,6 @@ class ChargesController < ApplicationController
   )
   
   @bookings.each {|pending| pending.toggle!(:payment)}
-
 
   rescue Stripe::CardError => e
   flash[:error] = e.message
