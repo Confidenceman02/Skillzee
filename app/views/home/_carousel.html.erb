@@ -1,6 +1,6 @@
 
   <%#auto-slide disabled so user can navigate courses via button %>
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+  <div id="carousel-example-generic <%= category %>" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
     <%#Carousel will only display courses related to a particular category%>
     <div class="carousel-inner">
@@ -14,10 +14,10 @@
     <% end %>
     </div>
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <a id="<%= category %>" class="left carousel-control" href="<#carousel-example-generic>" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <a id="<%= category %>" class="right carousel-control" href="<#carousel-example-generic>" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
   </div> <!-- Carousel -->
