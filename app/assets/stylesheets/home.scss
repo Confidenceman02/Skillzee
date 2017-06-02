@@ -69,6 +69,11 @@ body.index {
   margin-bottom: 80px;
 }
 
-// .carousel_image_wrap {
-//   height: 255px;
-// }
+#food_carousel {
+  max-width: 530px;
+}
+
+.carousel {
+  max-width: 530px;
+  margin: 0 auto;
+}
