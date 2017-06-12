@@ -77,3 +77,27 @@ body.index {
   max-width: 530px;
   margin: 0 auto;
 }
+
+.about_link {
+  color: #fff;
+  font-size: 2rem;
+}
+
+#category_title_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.see_all {
+  margin-top: 30px;
+  font-weight: normal;
+}
+
+#category_title_wrapper {
+  h2 {
+    color: #484848;
+  }
+  a {
+    color: #484848;
+  }
+}

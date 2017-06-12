@@ -10,7 +10,9 @@
       <h4>$<%= obj.price %></h4>
     </div>
     <div class="col-xs-4">
-     <div class="clock_container"><%= time_icon %> <span class"duration"><%= obj.duration %>hrs</span></div>
+
+    <%#'facon' is font awesome icon builder %>
+     <div class="clock_container"><%= facon('clock-o') %> <span class"duration"><%= obj.duration %>hrs</span></div>
     </div>
     <%# delete options for user of course%>
     <% if obj.user == current_user %>
