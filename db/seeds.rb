@@ -23,6 +23,6 @@ category = Category.create([
 {category: "Home"},
 {category: "Food"},
 {category: "sports"},
-{category: "Jewelry"}
+{category: "Jewellery"}
 
 ])
