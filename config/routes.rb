@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
   get 'courses_all', to: 'home#courses_all'
   get 'users', to: 'users#index'
+  
+  # Admin to delete any user when using devise for users
   match 'users/:id', to: 'users#destroy', as: :destroy_user, via: :delete
   devise_for :users, path_prefix: 'd', controllers: {
         sessions: 'users/sessions'

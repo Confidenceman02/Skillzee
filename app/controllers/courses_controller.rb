@@ -1,6 +1,8 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
- 
+  before_action :set_category, only:[:index]
+
+
   def index
     @courses = Course.all
   end
@@ -47,8 +49,12 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
+  def set_category
+    @category = Category.find(params[:category])
+  end
+
   def course_params
     params.require(:course).permit(:price, :title, :image, :address, :country_code, :city, :duration, :about_teacher, :state, :description, :max_students, :notes, category_ids: [])
-    end
+  end
 
 end

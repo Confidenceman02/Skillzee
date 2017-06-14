@@ -2,16 +2,15 @@
 <div class="container carousel_wrap">
   <div id="category_title_wrapper">
     <h2>Food</h2>
-    <h4 class="see_all"><%= link_to 'see all >', "#" %></h4>
+    <h4 class="see_all"><%= link_to 'see all >', courses_path(category: @food) %></h4>
   </div>
   <div class="carousel_box">
-      <%= render 'carousel', categories: @category, category: 'Food' %>
+      <%= render 'carousel', categories: @category, category: @food.category %>
   </div>
-
 
     <div id="category_title_wrapper">
     <h2>Jewellery</h2>
-    <h4 class="see_all"><%= link_to 'see all >', "#" %></h4>
+    <h4 class="see_all"><%= link_to 'see all >', courses_path(category: @jewellery) %></h4>
   </div>
-    <%= render 'carousel', categories: @category, category: 'Jewelry' %>
+    <%= render 'carousel', categories: @category, category: @jewellery.category %>
   </div>

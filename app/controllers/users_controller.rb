@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  # Only admin has the ability to delete a profile.
   User.find(params[:id]).destroy
-  flash[:success] = "User destroyed."
+  flash[:success] = "User deleted."
   redirect_to users_path
-end
+  end
 
 end

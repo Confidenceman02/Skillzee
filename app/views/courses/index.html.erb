@@ -1,4 +1,4 @@
-<% @courses.each do |c| %>
+<% @category.courses.each do |c| %>
   <%= render 'course', obj: c %>
 <div class="container">
   <%= render 'map_embed', lat: c.lat, lng: c.lng %>
