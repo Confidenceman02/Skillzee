@@ -106,3 +106,18 @@ body.index {
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 40px;
 }
+
+.course-title {
+  padding-bottom: 0px;
+  bottom: 0px;
+}
+
+.title-background-gradient {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  z-index: 1;
+  background-color: skyblue;
+  top: 80%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+}
