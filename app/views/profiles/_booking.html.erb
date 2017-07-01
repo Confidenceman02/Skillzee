@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Course</th>
+    <th>Date</th>
+    <th>Time</th>
+  </tr>
+  <tr>
+    <td><%= obj.course_date.course.title %></td>
+    <td><%= obj.course_date.date %></td>
+    <td><%= obj.course_date.time.strftime("%H:%I") %></td>
+  </tr>
+</table>

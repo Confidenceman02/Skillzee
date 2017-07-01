@@ -34,10 +34,7 @@
   margin-top: 50px;
   height: 5rem;
   background-color: #01C8D9;
-}
-
-.courses_btn:visited {
-  color:#01C8D9;
+  color: white;
 }
 
 .courses_btn {
@@ -47,16 +44,25 @@
   }
 }
 
-#expand {
-  height: 0px;
-  overflow: hidden;
-  transition: height 0.3s ease-in-out;
+#booking-section {
+  display: none;
 }
 
-#toggle:checked ~ #expand {
-  height: 300px;
-  overflow: scroll;
-}
+// Activiting visited changes font color to #01C8D9
+// .courses_btn:visited {
+//   color:#01C8D9;
+// }
+
+// #expand {
+//   height: 0px;
+//   overflow: hidden;
+//   transition: height 0.3s ease-in-out;
+// }
+
+// #toggle:checked ~ #expand {
+//   height: 300px;
+//   overflow: scroll;
+// }
 
 .checkbox_form {
   padding: 0px;
