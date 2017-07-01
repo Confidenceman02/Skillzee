@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "turbolinks:load", -> 
-  $('#bookings-link').click ->
+  $('#bookings-link').click (event) ->
+    event.preventDefault()
     $('#booking-section').toggle()
-    return false
+
