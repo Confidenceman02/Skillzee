@@ -1,5 +1,11 @@
 <%= render 'course', obj: @course %>
 
-<div class="map_embed">
+<div class="container">
   <%= render 'map_embed', lat: @course.lat, lng: @course.lng %>
+  <div class="address_box">
+    <div class="line">
+      <h4><%= @course.address %></h4>
+      <h5><%= @course.city %></h5>
+    </div>
+  </div>
 </div>

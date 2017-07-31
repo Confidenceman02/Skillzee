@@ -107,9 +107,18 @@ body.index {
   padding-bottom: 40px;
 }
 
-.course-title {
+.course-title-wrapper {
   padding-bottom: 0px;
   bottom: 0px;
+}
+
+.course-title {
+  font-size: 2em;
+  color: #fff;
+    &:hover {
+      color: blue;
+      text-decoration-line: none;
+    }
 }
 
 .title-background-gradient {

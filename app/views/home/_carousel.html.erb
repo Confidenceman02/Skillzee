@@ -9,8 +9,8 @@
       <div class="item <%= index == 0 ? 'active' : '' %>">
         <%= image_tag course.image_url %>
         <div class="title-background-gradient"></div>
-        <div class="carousel-caption course-title">
-          <h3><%= course.title %></h3>
+        <div class="carousel-caption course-title-wrapper">
+          <%= link_to course.title, course_path(course), class: 'course-title'%>
         </div>
       </div>
     <% end %>

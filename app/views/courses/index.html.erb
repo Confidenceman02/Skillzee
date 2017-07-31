@@ -2,11 +2,11 @@
   <%= render 'course', obj: c %>
 <div class="container">
   <%= render 'map_embed', lat: c.lat, lng: c.lng %>
-    <div class="container address_box">
-      <div class="line">
-        <h4><%= c.address %></h4>
-        <h5><%= c.city %></h5>
-      </div>
+  <div class="address_box">
+    <div class="line">
+      <h4><%= c.address %></h4>
+      <h5><%= c.city %></h5>
     </div>
+  </div>
 </div>
 <% end %>
