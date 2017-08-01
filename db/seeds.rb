@@ -20,9 +20,9 @@
 # }])
 
 category = Category.create([
-{category: "Home"},
+{category: "home"},
 {category: "Food"},
 {category: "sports"},
-{category: "Jewellery"}
+{category: "jewellery"}
 
 ])

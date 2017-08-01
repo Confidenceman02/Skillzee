@@ -5,7 +5,7 @@
     <!-- Wrapper for slides -->
     <%#Carousel will only display courses related to a particular category%>
     <div class="carousel-inner carousel_image_wrap">
-    <% categories.category_picker(category).courses.each_with_index do |course, index| %>
+    <% categories.where(:category => category).first.courses.each_with_index do |course, index| %>
       <div class="item <%= index == 0 ? 'active' : '' %>">
         <%= image_tag course.image_url %>
         <div class="title-background-gradient"></div>
